@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBmiCalculator</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <style>
+        div{
+            background-color: white;
+            margin: 0px 17%;
+            padding: 0px;
+            padding-bottom: 57px;
+            margin-top: 50px;
+            border-radius: 110px;
+        }
+        body{
+            background-color: #FFBCD1;
+            margin: auto;
+            text-align: center;
+            font-size: 30px;
+            font-family: 'Lobster', cursive;
+        }
+        .height{
+            color: #24A19C;
+            font-size: 100px;
+            margin-bottom: 10px;
+        }
+        .weight{
+            color: #BAFFB4;
+            font-size: 100px;
+            margin: 10px;
+        }
+        input{
+            width: 30%;
+            height: 40px;
+            border: none;
+            border-bottom: 2px solid rgb(24, 24, 24);
+            background-color: #A8ECE7;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            text-align: center;
+        }
+        input[type=text]{
+            font-size: 18px;
+            padding: 10px;
+        }
+    
+        #btn{
+            font-size: 31px;
+            border-radius: 30px;
+            padding: 9px;
+            width: 10rem;
+            background-color: #17D7A0;
+            color: white;
+            border: none;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+            cursor: pointer;
+        }
+        #btn:hover{
+            background-color: #34BE82;
+        }
+        @media (max-width: 1028px){
+            div{
+                margin: 0px 4%;
+            }
+            input{
+                width: 51%;
+                height: 37px;
+            }
+        }
+        footer{
+            margin-top: 30px;
+            padding: 2px;
+            font-family: arial;
+            font-size: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="height">Height</p>
+        <input type="text" id="h" placeholder="Enter your height in m">
+        <p class="weight">Weight</p>
+        <input type="text" name="" id="w" placeholder="Enter your weight in kg">
+        <p id="result"></p><br>
+        <button id="btn" onclick="BMI()">Calculate</button>
+        <footer>
+            <i class="fab fa-tumblr"></i> By Taha Suhail
+        </footer>
+    </div>
+    
+    <script>
+        function BMI(){
+            var h = document.getElementById("h").value;
+            var w = document.getElementById("w").value;
+            var totalHeight = h*h;
+            var bmi = w/totalHeight;
+            var bmiO = bmi.toFixed(2);
+            document.getElementById("result").innerHTML = "Your Total Bmi is "+bmiO;
+        }
+
+    </script>
+</body>
+</html>
